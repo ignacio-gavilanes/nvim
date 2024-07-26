@@ -8,11 +8,11 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
-		vim.keymap.set(
+		vim.keymap.set( -- Toggle neo tree file system navigation
 			"n",
 			"<leader>b",
 			":Neotree reveal filesystem left toggle<CR>",
 			{ desc = "Toggle neotree file system" }
-		) -- Toggle neo tree file system navigation
+		)
 	end,
 }

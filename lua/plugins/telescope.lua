@@ -49,7 +49,7 @@ return { -- TELESCOPE: Fuzzy Finder (files, lsp, etc)
 		-- Set Telescope-specific keymaps
 		-- Main keymaps
 		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" }) -- Quickly find and open files in my project directory.
-		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" }) -- Find all occurrences of the word under the cursor in ny project.
+		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" }) -- Find all occurrences of the word under the cursor in my project.
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" }) -- Search for a string across all files in my project.
 		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" }) -- If I was interrupted or need to revisit a previous search, this keybinding provides a quick way to continue where I left off
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" }) -- Manage and switch between open files.

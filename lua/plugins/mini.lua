@@ -12,5 +12,6 @@ return { -- MINI.NVIM - Collection of 40+ independent lua modules improving over
 		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 		-- - sd'   - [S]urround [D]elete [']quotes
 		-- - sr)'  - [S]urround [R]eplace [)] [']
+		require("mini.hipatterns").setup() -- Highlight patterns in text
 	end,
 }
