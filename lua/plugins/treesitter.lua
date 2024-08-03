@@ -36,7 +36,6 @@ return { -- TREESITTER: Takes snippets of code and generates an abstract syntax 
 			keymaps = {
 				init_selection = "<leader>sl",
 				node_incremental = "<leader>si",
-				scope_incremental = "<leader>sc",
 				node_decremental = "<leader>sd",
 			},
 		},
