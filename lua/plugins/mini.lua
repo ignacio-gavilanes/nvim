@@ -36,5 +36,24 @@ return { -- MINI.NVIM - Collection of 40+ independent lua modules improving over
 				},
 			},
 		})
+
+		local animate = require("mini.animate") -- Animate common NeoVim actions
+		animate.setup({
+			scroll = {
+				enable = true,
+			},
+			open = {
+				enable = false,
+			},
+			close = {
+				enable = false,
+			},
+		})
+
+		local indentscope = require("mini.indentscope") -- Animate common NeoVim actions
+		indentscope.setup({
+			symbol = "│",
+			options = { try_as_border = true },
+		})
 	end,
 }

@@ -13,3 +13,6 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- Center cursor position when moving up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
+
+-- Keybind to dismiss Noice notifications
+vim.keymap.set("n", "<leader>dn", ":Noice dismiss<CR>")
