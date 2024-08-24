@@ -8,5 +8,8 @@ return { -- GITSIGNS - Adds git related signs to the gutter, as well as utilitie
 			topdelete = { text = "‾" },
 			changedelete = { text = "~" },
 		},
+		current_line_blame = true,
+		current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
+		signcolumn = true,
 	},
 }

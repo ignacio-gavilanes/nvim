@@ -1,3 +1,5 @@
+-- TODO: Fix issue where weird spacing is introduced for lua files
+
 return { -- CONFORM - Autoformat
 	"stevearc/conform.nvim",
 	lazy = false,
@@ -13,7 +15,7 @@ return { -- CONFORM - Autoformat
 	},
 	opts = {
 		notify_on_error = false,
-		format_on_save = function(bufnr)
+		format_on_save = function(bufnr) -- NOTE: It gets annoying sometimes, consider disabling format on save
 			-- Disable "format_on_save lsp_fallback" for languages that don't
 			-- have a well standardized coding style
 			local disable_filetypes = { c = true, cpp = true }

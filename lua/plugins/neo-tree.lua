@@ -8,6 +8,7 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
+		-- TODO: Implement a hide functionality for when opening a single
 		vim.keymap.set( -- Toggle neo tree file system navigation
 			"n",
 			"<leader>b",
