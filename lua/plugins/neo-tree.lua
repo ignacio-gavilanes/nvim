@@ -9,6 +9,7 @@ return {
 	},
 	config = function()
 		-- TODO: Implement a hide functionality for when opening a single
+		-- TODO: Hide numbers and ~ for neotree (they go away after changing focus one time)
 		vim.keymap.set( -- Toggle neo tree file system navigation
 			"n",
 			"<leader>b",
