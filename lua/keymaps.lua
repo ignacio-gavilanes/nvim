@@ -19,7 +19,12 @@ vim.keymap.set("n", "<leader>dn", ":Noice dismiss<CR>")
 
 -- Keymaps for barbar.nvim
 -- Move to previous/next
-vim.keymap.set( "n", "<A-,>", "<cmd>BufferPrevious<CR>", { desc = "Move to previous buffer", noremap = true, silent = true })
+vim.keymap.set(
+	"n",
+	"<A-,>",
+	"<cmd>BufferPrevious<CR>",
+	{ desc = "Move to previous buffer", noremap = true, silent = true }
+)
 vim.keymap.set("n", "<A-.>", "<cmd>BufferNext<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
 -- Goto buffer in position _
 vim.keymap.set("n", "<A-1>", "<cmd>BufferGoto 1<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
@@ -32,3 +37,10 @@ vim.keymap.set("n", "<A-7>", "<cmd>BufferGoto 7<CR>", { desc = "Move to next buf
 vim.keymap.set("n", "<A-8>", "<cmd>BufferGoto 8<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<A-9>", "<cmd>BufferGoto 9<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<A-0>", "<cmd>BufferLast<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
+
+-- Keymaps for Gitsigns
+vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns preview_hunk <CR>", { desc = "Preview hunk" })
+vim.keymap.set("n", "<leader>gr", "<cmd>Gitsigns reset_hunk <CR>", { desc = "Reset hunk" })
+
+-- Delete single character without copying into register
+vim.keymap.set("n", "x", '"_x')

@@ -21,7 +21,7 @@ vim.opt.splitbelow = true
 vim.opt.fillchars = { fold = " ", foldsep = " ", foldopen = "", foldclose = "" } -- Improve appearance of folds
 -- NOTE: This option may or may not help me remove the numbers that appear in the gutter when folding
 -- https://stackoverflow.com/questions/74397698/how-to-remove-the-fold-level-numbers-in-vim
-vim.opt.foldcolumn = '0'
+vim.opt.foldcolumn = "0"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split" -- Preview substitutions live, as you type!
@@ -41,3 +41,15 @@ vim.opt.virtualedit = "block" -- When in visual block mode, we can select a bloc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- Clear highlight set by vim.opt.hlsearch on pressing <Esc> in normal mode
 
 vim.opt.shell = "zsh"
+
+-- Customize warnings, errors, hints and info.
+vim.diagnostic.config({
+	signs = {
+		text = { -- To disable them I can set them all to ""
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "󰌵",
+		},
+	},
+})

@@ -3,9 +3,6 @@
 
 -- TODO: Fix issue for where buffers start all the way to the left end, instead, make it so that they start after Neo-tree
 
--- TODO: Fix issue regarding empty buffer open on VimEnter
--- https://github.com/romgrk/barbar.nvim/issues/582
-
 return {
 	"romgrk/barbar.nvim",
 	dependencies = {
@@ -16,6 +13,7 @@ return {
 		vim.g.barbar_auto_setup = false
 	end,
 	opts = {
+		exclude_name = { "" }, -- Not ideal, but I can hide empty buffers this way for now
 		icons = {
 			buffer_index = "superscript",
 			pinned = { button = "", filename = true },
