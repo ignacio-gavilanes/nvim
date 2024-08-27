@@ -26,6 +26,8 @@ vim.keymap.set(
 	{ desc = "Move to previous buffer", noremap = true, silent = true }
 )
 vim.keymap.set("n", "<A-.>", "<cmd>BufferNext<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
+-- Keymaps to pin buffer
+vim.keymap.set("n", "<A-p>", "<cmd>BufferPin<CR>", { desc = "Pin focused buffer", noremap = true, silent = true })
 -- Goto buffer in position _
 vim.keymap.set("n", "<A-1>", "<cmd>BufferGoto 1<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<A-2>", "<cmd>BufferGoto 2<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
@@ -37,6 +39,21 @@ vim.keymap.set("n", "<A-7>", "<cmd>BufferGoto 7<CR>", { desc = "Move to next buf
 vim.keymap.set("n", "<A-8>", "<cmd>BufferGoto 8<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<A-9>", "<cmd>BufferGoto 9<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<A-0>", "<cmd>BufferLast<CR>", { desc = "Move to next buffer", noremap = true, silent = true })
+-- Keymaps to close buffer
+vim.keymap.set("n", "<A-q>", "<cmd>BufferClose<CR>", { desc = "Close focused buffer", noremap = true, silent = true })
+vim.keymap.set(
+	"n",
+	"<A-Q>",
+	"<cmd>BufferCloseAllButPinned<CR>",
+	{ desc = "Close all buffer but pinned ones", noremap = true, silent = true }
+)
+-- Keymaps for ordering buffers
+vim.keymap.set(
+	"n",
+	"<A-o>",
+	"<cmd>BufferOrderByDirectory<CR>",
+	{ desc = "Order files by directory", noremap = true, silent = true }
+)
 
 -- Keymaps for Gitsigns
 vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns preview_hunk <CR>", { desc = "Preview hunk" })
