@@ -40,7 +40,7 @@ return { -- MINI.NVIM - Collection of 40+ independent lua modules improving over
 		local animate = require("mini.animate") -- Animate common NeoVim actions
 		animate.setup({
 			scroll = {
-				enable = true,
+				enable = false,
 			},
 			open = {
 				enable = false,
