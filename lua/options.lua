@@ -38,6 +38,7 @@ vim.opt.softtabstop = 2
 vim.opt.title = true -- When on, the title of the window will be set to the value of 'titlestring'. :set titlestring = "test"
 vim.opt.wrap = false -- Code does not wrap around if line is too long
 vim.opt.virtualedit = "block" -- When in visual block mode, we can select a block even if not all lines are of equal length
+vim.o.undolevels = 10000 -- Increase number of undo levels
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- Clear highlight set by vim.opt.hlsearch on pressing <Esc> in normal mode
 
 vim.opt.shell = "zsh"
