@@ -38,6 +38,12 @@ return { -- TELESCOPE: Fuzzy Finder (files, lsp, etc)
 					require("telescope.themes").get_dropdown(),
 				},
 			},
+			defaults = {
+				file_ignore_patterns = {
+					"node_modules/*",
+					"package%-lock.json"
+				},
+			},
 		})
 
 		-- Enable Telescope extensions if they are installed
