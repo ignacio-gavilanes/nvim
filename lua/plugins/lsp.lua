@@ -11,7 +11,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"tsserver",
+					"ts_ls",
 					"ruby_lsp",
 					"pyright",
 					"graphql",
@@ -36,7 +36,7 @@ return {
 					},
 				},
 			})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 			lspconfig.ruby_lsp.setup({})
 			lspconfig.pyright.setup({})
 			lspconfig.graphql.setup({})
@@ -44,7 +44,7 @@ return {
 			lspconfig.jsonls.setup({})
 			lspconfig.html.setup({})
 			-- Lspconfig-specific keybinds
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {}) -- When hovering over an element I can press shift+k to see its documentation
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})    -- When hovering over an element I can press shift+k to see its documentation
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {}) -- Go to definition
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
