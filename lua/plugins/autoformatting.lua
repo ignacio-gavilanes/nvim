@@ -32,6 +32,7 @@ return { -- CONFORM - Autoformat
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
 			css = { "prettier" },
+			scss = { "prettier" },
 			html = { "prettier" },
 			json = { "prettier" },
 			markdown = { "prettier" },
