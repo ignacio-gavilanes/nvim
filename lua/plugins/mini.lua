@@ -7,6 +7,7 @@ return { -- MINI.NVIM - Collection of 40+ independent lua modules improving over
 		--  - yinq - [Y]ank [I]nside [N]ext [']quote
 		--  - ci'  - [C]hange [I]nside [']quote
 
+		require("mini.trailspace").setup() -- Remove trailing spaces
 		require("mini.surround").setup() -- Add/delete/replace surroundings (brackets, quotes, etc.)
 		-- Examples:
 		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
