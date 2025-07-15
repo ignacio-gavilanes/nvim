@@ -1,7 +1,7 @@
-return { -- SOLARIZED-OSAKA COLORSCHEME - By devaslife
+return { -- solarized-osaka colorscheme by devaslife
 	"craftzdog/solarized-osaka.nvim",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
-	lazy = true,
+	lazy = false,
 	opts = function()
 		return {
 			transparent = true,

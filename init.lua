@@ -13,14 +13,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Require options.lua file
 -- WARNING: Options need to be loaded before Lazy since I am setting the leader keymap in that file
 require("options")
 
--- Require keypmaps.lua file
 require("keymaps")
 
--- Require autocommands.lua file
 require("autocommands")
 
 -- We now need to call the setup function for lazy in order to load it
