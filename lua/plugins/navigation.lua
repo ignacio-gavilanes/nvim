@@ -46,7 +46,7 @@ return {
       },
 
       keymaps = { -- Oil specific keybindings
-        ["q"] = "actions.close",
+        ["<Esc><Esc>"] = "actions.close",
         ["<leader>="] = {
           callback = function() -- Opens the current working directory in the existing buffer, replacing it instead of stacking new buffers.
             require("oil").open(vim.fn.getcwd(), { replace_buf = true })
