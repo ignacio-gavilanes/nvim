@@ -8,7 +8,6 @@ local servers = {
   "jsonls",
   "html",
   "cssls",
-  "scss_ls",
   "tailwindcss",
   "yamlls",
 }
@@ -65,15 +64,5 @@ return {
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
   },
-
-  {
-    "folke/snacks.nvim", -- Collection of small QoL plugins
-    priority = 1000,
-    lazy = false,
-    opts = {
-      input = { enabled = true },
-      picker = { enabled = true },
-    },
-  }
 }
 

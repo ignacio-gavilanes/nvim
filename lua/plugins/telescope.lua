@@ -34,13 +34,60 @@ return {
           "lazy%-lock.json",
           "yarn.lock",
           "pnpm%-lock.yaml",
-          "%[No Name%]",
+          "%[No Name%]", -- Unnamed buffers
+          "health://.*", -- :checkhealth buffers
         },
       },
     }
 
     require('telescope').load_extension('fzf')
 
+    local pickers = require("telescope.pickers")
+    local finders = require("telescope.finders")
+    local sorter = require("telescope.config").values.generic_sorter
+    local actions = require("telescope.actions")
+    local action_state = require("telescope.actions.state")
+    local Snacks = require("snacks")
+
+    --[[
+      In Lua, table iteration order is not guaranteed for hash tables.
+      Using an order array ensures options are shown in the desired sequence.
+    ]]
+    local git_url_order = {
+      "Go To Repository At Default Branch",
+      "Go To Repository At Current Branch",
+      "Go To File in Current Branch",
+    }
+
+    local git_url_map = {
+      [git_url_order[1]] = "repo",
+      [git_url_order[2]] = "branch",
+      [git_url_order[3]] = "file",
+    }
+
+    local function git_url_picker()
+      local opts = themes.get_dropdown({
+        prompt_title = "Git Repository View Options",
+        finder = finders.new_table {
+          results = git_url_order,
+        },
+        previewer = false,
+        winblend = 10,
+        sorter = sorter(),
+        attach_mappings = function(bufnr)
+          actions.select_default:replace(function()
+            local label = action_state.get_selected_entry()[1]
+            local what = git_url_map[label]
+            actions.close(bufnr)
+            Snacks.gitbrowse({ what = what })
+          end)
+          return true
+        end,
+      })
+      pickers.new({}, opts):find()
+    end
+
+    vim.keymap.set("n", "<leader>gr", git_url_picker, { desc = "Go to git repository" })
     vim.keymap.set("n", "<space>ff", builtin.find_files, { desc = "Find file in project directory" })
     vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Find word in project directory" })
     vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Navigate open buffers" })
