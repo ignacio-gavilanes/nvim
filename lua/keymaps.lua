@@ -25,7 +25,7 @@ vim.keymap.set("n", "<A-l>", ":vertical resize +2<CR>", { noremap = true, silent
 vim.keymap.set("n", "<A-j>", ":resize -2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-k>", ":resize +2<CR>", { noremap = true, silent = true })
 
--- Move lines up/down with Alt + j/k
+-- Move lines up/down with opt + j/k
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
