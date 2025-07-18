@@ -20,7 +20,9 @@ return { -- Generates an AST. This info is then utilized for highlighting, editi
 			"python",
 			"json",
 			"css",
+      "scss",
 			"tsx",
+      "regex",
 		},
 
 		auto_install = true, -- Autoinstall languages that are not installed
