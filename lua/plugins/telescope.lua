@@ -32,6 +32,8 @@ return {
           "node_modules/*",
           "package%-lock.json",
           "lazy%-lock.json",
+          "yarn.lock",
+          "pnpm%-lock.yaml",
           "%[No Name%]",
         },
       },
