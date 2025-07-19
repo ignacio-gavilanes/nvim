@@ -47,7 +47,7 @@ return {
     local sorter = require("telescope.config").values.generic_sorter
     local actions = require("telescope.actions")
     local action_state = require("telescope.actions.state")
-    local Snacks = require("snacks")
+    local Snacks = require("lua.plugins.qol")
 
     --[[
       In Lua, table iteration order is not guaranteed for hash tables.
