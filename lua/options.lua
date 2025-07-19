@@ -12,7 +12,6 @@ vim.opt.mouse = "a" -- Enable mouse mode, can be useful for resizing splits
 vim.opt.showmode = false -- Don't show the mode, since it's already in the status line
 vim.opt.signcolumn = "yes" -- Keep signcolumn on by default
 vim.opt.fillchars = { fold = " ", foldsep = " ", foldopen = "", foldclose = "" } -- Improve appearance of folds
-vim.opt.foldcolumn = "0" -- NOTE: This option may or may not help me remove the numbers that appear in the gutter when folding
 vim.opt.title = true -- When on, the title of the window will be set to the value of 'titlestring'. :set titlestring = "test"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
