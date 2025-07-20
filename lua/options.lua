@@ -53,5 +53,5 @@ vim.opt.expandtab = true
 vim.opt.softtabstop = 2
 
 -- Font and shell
-vim.g.have_nerd_font = true -- Set true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = true
 vim.opt.shell = "zsh"
