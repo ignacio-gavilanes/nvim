@@ -18,11 +18,11 @@ return {
 
     require('telescope').setup {
       pickers = {
-        find_files = themes.get_ivy(ivy_opts),
-        live_grep = themes.get_ivy(ivy_opts),
-        buffers = themes.get_ivy(ivy_opts),
-        diagnostics = themes.get_ivy(ivy_opts),
-        current_buffer_fuzzy_find = themes.get_dropdown(dropdown_opts),
+        find_files = ivy_opts,
+        live_grep = ivy_opts,
+        buffers = ivy_opts, -- TODO: Find a way to customize git status per buffer (h, %a, +, etc)
+        diagnostics = ivy_opts,
+        current_buffer_fuzzy_find = dropdown_opts,
       },
       extensions = {
         fzf = {}
@@ -47,7 +47,7 @@ return {
     local sorter = require("telescope.config").values.generic_sorter
     local actions = require("telescope.actions")
     local action_state = require("telescope.actions.state")
-    local Snacks = require("lua.plugins.qol")
+    local Snacks = require("snacks")
 
     --[[
       In Lua, table iteration order is not guaranteed for hash tables.
@@ -66,7 +66,7 @@ return {
     }
 
     local function git_url_picker()
-      local opts = themes.get_dropdown({
+      local opts = themes.get_dropdown({ -- TODO: Find out if there's an option to avoid rendering the input
         prompt_title = "Git Repository View Options",
         finder = finders.new_table {
           results = git_url_order,
