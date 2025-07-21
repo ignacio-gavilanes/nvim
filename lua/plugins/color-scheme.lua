@@ -30,6 +30,8 @@ return { -- solarized-osaka colorscheme by devaslife
       hl.TelescopePromptTitle = { bg = bg, fg = bg }
       hl.TelescopePreviewTitle = { bg = bg, fg = bg }
       hl.TelescopeResultsTitle = { bg = bg, fg = bg }
+
+      -- TODO: Customize Harpoon2 looks
     end,
   },
   config = function(_, opts)
