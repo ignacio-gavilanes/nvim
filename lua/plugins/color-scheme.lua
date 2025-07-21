@@ -4,25 +4,31 @@ return { -- solarized-osaka colorscheme by devaslife
   priority = 1000,
   opts = {
     transparent = true,
-    on_highlights = function(hl, c)
-      -- GitSigns highlights (gutter colors)
-      hl.GitSignsAdd = { fg = "#a6e22e", bold = true }
-      hl.GitSignsChange = { fg = "#fd971f", italic = true }
-      hl.GitSignsDelete = { fg = "#f92672", underline = true }
-
-      -- GitSigns word-level diff highlighting
-      hl.GitSignsAddInline = { fg = "#a6e22e", bg = "#3d4f32", bold = true }
-      hl.GitSignsChangeInline = { fg = "#fd971f", bg = "#4f3f32", italic = true }
-      hl.GitSignsDeleteInline = { fg = "#f92672", bg = "#4f3239", underline = true }
-
-      -- Yank and Visual mode highlighting
-      hl.IncSearch = { fg = "#fd971f", bg = "#4f3f32", italic = true }
-      hl.Visual = { fg = "#fd971f", bg = "#4f3f32", italic = true }
-
-      -- Telescope customization
+    on_highlights = function(hl)
       local bg = "#002b36"
       local fg = "#87DBDE"
+      local bg_green = "#3d4f32"
+      local fg_green = "#a6e22e"
+      local bg_pink = "#4f3239"
+      local fg_pink = "#f92672"
+      local bg_orange = "#4f3f32"
+      local fg_orange = "#fd971f"
 
+      -- GitSigns highlights (gutter colors)
+      hl.GitSignsAdd = { fg = fg_green, bold = true }
+      hl.GitSignsChange = { fg = fg_orange, italic = true }
+      hl.GitSignsDelete = { fg = fg_pink, underline = true }
+
+      -- GitSigns word-level diff highlighting
+      hl.GitSignsAddInline = { fg = fg_green, bg = bg_green, bold = true }
+      hl.GitSignsChangeInline = { fg = fg_orange, bg = bg_orange, italic = true }
+      hl.GitSignsDeleteInline = { fg = fg_pink, bg = bg_pink, underline = true }
+
+      -- Yank and Visual mode highlighting
+      hl.IncSearch = { fg = fg_orange, bg = bg_orange, italic = true }
+      hl.Visual = { fg = fg_orange, bg = bg_orange, italic = true }
+
+      -- Telescope customization
       hl.TelescopeNormal = { bg = bg, fg = fg }
       hl.TelescopeBorder = { bg = bg, fg = bg }
       hl.TelescopePromptNormal = { bg = bg }
