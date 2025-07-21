@@ -109,7 +109,7 @@ return {
           "<leader>h",
           function()
             harpoon.ui:toggle_quick_menu(harpoon:list(), {
-              title = " 🏹 Harpoon Files ",
+              title = " 🎣 Harpoon Files ",
               ui_width_ratio = 0.40,
               ui_fallback_width = 80,
               ui_max_width = 120,

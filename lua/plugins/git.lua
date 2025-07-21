@@ -9,7 +9,7 @@ return {
       topdelete = { text = "", show_count = true },
       changedelete = { text = "┃", show_count = true },
     },
-    current_line_blame = true,
+    current_line_blame = false,
     current_line_blame_formatter = "    <author>, <author_time:%R> - <summary>",
     signcolumn = true,
     on_attach = function(bufnr)
