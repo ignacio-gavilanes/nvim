@@ -55,5 +55,104 @@ return {
         },
       }
     },
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local harpoon = require("harpoon")
+      harpoon:setup()
+    end,
+    keys = function()
+      local harpoon = require("harpoon")
+      local snacks = require("snacks")
+
+      return {
+        {
+          "<leader>a",
+          function()
+            harpoon:list():add()
+            local filename = vim.fn.expand("%:t")
+
+            if filename == "" then
+              filename = "Buffer"
+            end
+
+            snacks.notify("Added " .. filename .. " to Harpoon", {
+              title = "Harpoon",
+              icon = "📌",
+              level = "info"
+            })
+          end,
+          desc = "Add file to Harpoon"
+        },
+        {
+          "<leader>r",
+          function()
+            local filename = vim.fn.expand("%:t")
+
+            if filename == "" then
+              filename = "Buffer"
+            end
+
+            harpoon:list():remove()
+            snacks.notify("Removed " .. filename .. " from Harpoon", {
+              title = "Harpoon",
+              icon = "🗑️",
+              level = "warn"
+            })
+          end,
+          desc = "Remove file from Harpoon"
+        },
+        {
+          "<leader>h",
+          function()
+            harpoon.ui:toggle_quick_menu(harpoon:list(), {
+              title = " 🏹 Harpoon Files ",
+              ui_width_ratio = 0.40,
+              ui_fallback_width = 80,
+              ui_max_width = 120,
+            })
+          end,
+          desc = "Toggle Harpoon Quick Menu"
+        },
+        {
+          "<leader>1",
+          function() harpoon:list():select(1) end,
+          desc = "Navigate to Harpoon file 1"
+        },
+        {
+          "<leader>2",
+          function() harpoon:list():select(2) end,
+          desc = "Navigate to Harpoon file 2"
+        },
+        {
+          "<leader>3",
+          function() harpoon:list():select(3) end,
+          desc = "Navigate to Harpoon file 3"
+        },
+        {
+          "<leader>4",
+          function() harpoon:list():select(4) end,
+          desc = "Navigate to Harpoon file 4"
+        },
+        {
+          "<leader>5",
+          function() harpoon:list():select(5) end,
+          desc = "Navigate to Harpoon file 5"
+        },
+        {
+          "<C-S-P>",
+          function() harpoon:list():prev() end,
+          desc = "Navigate to previous Harpoon file"
+        },
+        {
+          "<C-S-N>",
+          function() harpoon:list():next() end,
+          desc = "Navigate to next Harpoon file"
+        },
+      }
+    end,
   }
 }
